@@ -43,12 +43,14 @@ const start  = async() => {
     })
     server.applyMiddleware({ app })
 
+    app.use('/audio/',express.static(path.join(__dirname,'audio')))
+
     app.get('/playground',expressPlayground({ endpoint: '/graphql'}))
 
     const httpServer = createServer(app)
     server.installSubscriptionHandlers(httpServer)
     
-    httpServer.timeout = 10000
+    httpServer.timeout = 5000
 
     httpServer.listen({ port : 7777}, () =>{
         console.log(`GQL Server running at http://localhost:7777${server.graphqlPath}`)

@@ -1,9 +1,8 @@
 type Query{
-    translation(code:[String]): String
+    translation(code:[String]): Word
 }
 
-type User{
-    id: String!
-    pw: String!
-    phone: String!
+type Word{
+    word:String
+    audio:String
 }
