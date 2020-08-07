@@ -1,4 +1,4 @@
-const { ApolloServer,PubSub } = require('apollo-server-express')
+const { ApolloServer } = require('apollo-server-express')
 const express = require('express')
 const expressPlayground = require('graphql-playground-middleware-express').default
 const { readFileSync } = require('fs')
@@ -17,7 +17,6 @@ const typeDefs = readFileSync('./typeDefs.graphql', 'utf-8')
 
 const start  = async() => {
     const app = express() 
-    const pubsub = new PubSub()
     const client = await MongoClient.connect(
         process.env.DB_HOST,
         {
@@ -38,7 +37,7 @@ const start  = async() => {
         ],
         context: async({ req, connection }) => {
             const token = req ? req.headers.authorization : connection.context.Authorization
-            return {db, token, pubsub}
+            return {db, token}
         }
     })
     server.applyMiddleware({ app })
@@ -54,7 +53,6 @@ const start  = async() => {
 
     httpServer.listen({ port : 7777}, () =>{
         console.log(`GQL Server running at http://localhost:7777${server.graphqlPath}`)
-        console.log(`Subscriptions ready at ws://localhost:7777${server.subscriptionsPath}`)
         }
     )
 }
