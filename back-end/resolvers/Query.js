@@ -9,6 +9,7 @@ module.exports = {
     translation: async(parent,args,{ db }) => {
         let ret = []
         args.code.forEach(element => {
+            if(memo[element] == undefined) return;
             ret.push(memo[element])
         });
         const word = Hangul.assemble(ret); // '가나다'
