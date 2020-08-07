@@ -50,9 +50,9 @@ const start  = async() => {
     
     httpServer.timeout = 10000
 
-    httpServer.listen({ port : 2222}, () =>{
-        console.log(`GQL Server running at http://localhost:2222${server.graphqlPath}`)
-        console.log(`Subscriptions ready at ws://localhost:2222${server.subscriptionsPath}`)
+    httpServer.listen({ port : 7777}, () =>{
+        console.log(`GQL Server running at http://localhost:7777${server.graphqlPath}`)
+        console.log(`Subscriptions ready at ws://localhost:7777${server.subscriptionsPath}`)
         }
     )
 }

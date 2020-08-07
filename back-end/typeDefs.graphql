@@ -1,3 +1,9 @@
 type Query{
-    test: String!
+    translation(code:[String]): String
+}
+
+type User{
+    id: String!
+    pw: String!
+    phone: String!
 }
