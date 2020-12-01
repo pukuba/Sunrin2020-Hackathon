@@ -1,4 +1,4 @@
-<img src="./screenshot/banner.png">
+<img src="https://github.com/LovePrincipal/Sunrin2020-Hackathon-App/blob/master/screenshot/banner.png">
 
 ## <b>시각 장애인을 위한 번역 서비스 '보다' 👀</b> 
 
@@ -17,7 +17,7 @@
 
 ## <b>서비스 UI/UX 🌸</b> 
   
-<img src="./screenshot/mockup.png">
+<img src="https://github.com/LovePrincipal/Sunrin2020-Hackathon-App/blob/master/screenshot/mockup.png">
   
 ### 시각장애인을 위한 간단한 UI  
   
